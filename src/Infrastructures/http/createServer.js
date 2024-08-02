@@ -17,6 +17,9 @@ const createServer = async (container) => {
     handler: () => ({
       value: 'Hello world!',
     }),
+    options: {
+      auth: false,  
+    },
   });
   server.ext('onPreResponse', errorMiddleware);
 
