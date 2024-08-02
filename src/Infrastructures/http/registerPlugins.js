@@ -22,6 +22,7 @@ const registerPlugins = async (server, container) => {
       options: { container },
     },
   ]);
+  
 };
 
 module.exports = registerPlugins;
