@@ -11,6 +11,13 @@ const createServer = async (container) => {
 
   await registerPlugins(server, container);
   await registerJwtAuthStrategy(server);
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: () => ({
+      value: 'Hello world!',
+    }),
+  });
   server.ext('onPreResponse', errorMiddleware);
 
   return server;
